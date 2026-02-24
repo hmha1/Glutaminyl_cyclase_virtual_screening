@@ -3,7 +3,7 @@ A hybrid deep learning framework for pIC50 regression using:
 - Transformer-based molecular embeddings (ChemBERTa)
 - Morgan fingerprints (ECFP4)
 - Feature fusion with deep neural network
-Designed for scaffold-split evaluation to ensure realistic chemical generalization.
+
 
 <p align="center">
   <img src="image/model_architecture.png" width="600"><br>
@@ -18,9 +18,12 @@ test_scaffold_split.csv
 Each file must contain the following columns:
 - Smiles
 - pChEMBL Value
-## Installation
-Install required dependencies: pip install transformers rdkit pandas scikit-learn torch matplotlib
-If running on Google Colab, dependencies are installed automatically in the script.
+### Example 
+| Smiles | pChEMBL Value |
+|----------|----------|
+| CCOc1ccc2nc(S(N)(=O)=O)sc2c1  | 7.52 |
+| CN1CCN(CC1)C2=NC3=CC=CC=C3N2| 6.84|
+  
 ## Model architecture 
 The framework consists of three main components.
 ### Transformer Branch
@@ -54,3 +57,7 @@ The best model is selected based on the lowest validation RMSE
 Place the dataset CSV files in the same directory as train.py, then run:
 python train.py
 
+<p align="center">
+  <img src="image/workflow.png" width="600"><br>
+  <em>Figure 2. Workflow of virtual screening for compounds against hQC enzyme.</em>
+</p> 
