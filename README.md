@@ -28,9 +28,9 @@ Top candidates are validated through MD simulations by analyzing RMSD, RMSF, SAS
 
 ## Dataset 
 The training pipeline expects three CSV files:
-`train_scaffold_split.csv`
-`validation_scaffold_split.csv`
-`test_scaffold_split.csv`
+`train.csv`
+`validation.csv`
+`test.csv`
 Each file must contain the following columns:
 - Smiles
 - pChEMBL Value
