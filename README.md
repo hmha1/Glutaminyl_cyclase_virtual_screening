@@ -5,6 +5,11 @@ A hybrid deep learning framework for pIC50 regression using:
 - Feature fusion with deep neural network
 Designed for scaffold-split evaluation to ensure realistic chemical generalization.
 
+<p align="center">
+  <img src="image/model_architecture.png" width="600"><br>
+  <em>Figure 1. Hybrid ChemBERTa and ECFP4 fingerprint model architecture.</em>
+</p> 
+
 ## Dataset Format
 The training pipeline expects three CSV files:
 train_scaffold_split.csv
@@ -48,3 +53,4 @@ The best model is selected based on the lowest validation RMSE
 ## How to Run
 Place the dataset CSV files in the same directory as train.py, then run:
 python train.py
+
