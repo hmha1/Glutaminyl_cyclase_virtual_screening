@@ -27,7 +27,7 @@ Top candidates are validated through MD simulations by analyzing RMSD, RMSF, SAS
 
 
 ## Dataset 
-** The training pipeline expects three CSV files: **
+**The training pipeline expects three CSV files:**
 `train.csv`
 `validation.csv`
 `test.csv`
@@ -40,7 +40,7 @@ Each file must contain the following columns:
 | CCOc1ccc2nc(S(N)(=O)=O)sc2c1  | 7.52 |
 | CN1CCN(CC1)C2=NC3=CC=CC=C3N2| 6.84|
 
-** Dataset for virtual screeing is retrieved from COCONUT database (https://coconut.naturalproducts.net/) **
+**Dataset for virtual screeing is retrieved from COCONUT database (https://coconut.naturalproducts.net/)**
   
 ## Model architecture 
 The proposed model is a hybrid regression framework that combines transformer-based embeddings and Morgan fingerprint features, both generated from SMILES strings. The architecture includes a transformer branch, a fingerprint branch, and a fusion regression head for pIC50 prediction.
@@ -60,7 +60,7 @@ The proposed model is a hybrid regression framework that combines transformer-ba
 - Radius = 2
 - 2048-bit 
 - Multilayer perceptron: `2048 → 1024 → 512` (512-dimensional feature)
-### Fusion and Regression Head
+
 ## Fusion and Regression Head
 
 The 512-dimensional transformer feature and the 512-dimensional fingerprint feature are concatenated into a 1024-dimensional vector. This fused representation is passed through a fully connected regression network:
