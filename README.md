@@ -39,6 +39,8 @@ Each file must contain the following columns:
 |----------|----------|
 | CCOc1ccc2nc(S(N)(=O)=O)sc2c1  | 7.52 |
 | CN1CCN(CC1)C2=NC3=CC=CC=C3N2| 6.84|
+
+Dataset for virtual screeing is retrieved from COCONUT database (https://coconut.naturalproducts.net/)
   
 ## Model architecture 
 The proposed model is a hybrid regression framework that combines transformer-based embeddings and Morgan fingerprint features, both generated from SMILES strings. The architecture includes a transformer branch, a fingerprint branch, and a fusion regression head for pIC50 prediction.
