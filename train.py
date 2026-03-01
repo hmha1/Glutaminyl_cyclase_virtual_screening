@@ -58,7 +58,8 @@ class HybridDataset(Dataset):
         item['fingerprint'] = self.fingerprints[idx]
         item['labels'] = self.labels[idx]
         return item
-
+        
+# ==== Model ====
 class HybridRegressor(nn.Module):
     def __init__(self, transformer_name="seyonec/ChemBERTa-zinc-base-v1", fingerprint_dim=2048):
         super().__init__()
@@ -112,6 +113,7 @@ class HybridRegressor(nn.Module):
             output['loss'] = loss
         return output
 
+# ==== random seed ====
 import random
 import os
 def set_seed(seed: int = 42):
@@ -161,6 +163,8 @@ val_loader = DataLoader(
     worker_init_fn=seed_worker, generator=g
 )
 
+# ==== Set up ====
+
 from transformers import get_cosine_schedule_with_warmup
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 epochs = 50
@@ -203,6 +207,8 @@ best_model_state = None
 best_train_metrics = None
 best_val_metrics = None
 
+# ==== Training loop ====
+
 for epoch in range(epochs):
     model.train()
     total_loss = 0
@@ -234,6 +240,8 @@ for epoch in range(epochs):
     print(f"Epoch {epoch+1}/{epochs}:")
     print(f"  Train - RMSE: {train_metrics[0]:.4f}, MAE: {train_metrics[1]:.4f}, R²: {train_metrics[2]:.4f}")
     print(f"  Valid - RMSE: {val_metrics[0]:.4f}, MAE: {val_metrics[1]:.4f}, R²: {val_metrics[2]:.4f}")
+
+# ==== Test result ====
 
 test_df  = pd.read_csv("test_scaffold_split.csv")
 test_dataset  = HybridDataset(test_df["Smiles"], test_df["pChEMBL Value"])
