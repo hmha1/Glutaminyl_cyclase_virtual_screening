@@ -33,9 +33,9 @@ Top candidates are validated through MD simulations by analyzing RMSD, RMSF, SAS
 `test.csv`
 Each file must contain the following columns:
 - Smiles
-- pChEMBL Value
+- pIC50 Value
 ### Example 
-| Smiles | pChEMBL Value |
+| Smiles | pIC50 Value |
 |----------|----------|
 | CCOc1ccc2nc(S(N)(=O)=O)sc2c1  | 7.52 |
 | CN1CCN(CC1)C2=NC3=CC=CC=C3N2| 6.84|
