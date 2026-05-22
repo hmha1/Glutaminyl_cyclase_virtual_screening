@@ -8,16 +8,16 @@ import pandas as pd
 
 df=pd.read_csv('full qGC dataset.csv')
 
-df=df[['Molecule ChEMBL ID','Smiles','pChEMBL Value']]
+df=df[['Molecule ChEMBL ID','Smiles','pIC50 Value']]
 df=df.dropna()
 
 df = df.groupby('Molecule ChEMBL ID').agg({
     'Smiles': 'first',
-    'pChEMBL Value': 'mean'
+    'pIC50': 'mean'
 }).reset_index()
 
 df = df.drop_duplicates(subset='Molecule ChEMBL ID', keep='first').reset_index(drop=True)
-df = df.sort_values(by='pChEMBL Value', ascending=True).reset_index(drop=True)
+df = df.sort_values(by='pIC50 Value', ascending=True).reset_index(drop=True)
 
 
 def is_salt(smiles):
@@ -98,7 +98,7 @@ df_train, df_val, df_test = scaffold_split(
 def summarize_pchembl(df, name):
     print(f"\n{name}")
     print("N =", len(df))
-    print(df["pChEMBL Value"].describe())
+    print(df["pIC50 Value"].describe())
 
 summarize_pchembl(df_train, "TRAIN")
 summarize_pchembl(df_val,   "VAL")
