@@ -1,4 +1,4 @@
-Molecule ChEMBL ID,Smiles,pChEMBL Value
+Molecule ChEMBL ID,Smiles,pIC50 Value
 CHEMBL4466671,COc1ccc(C2(C(=O)NCCCn3cncc3C)CCCCC2)cc1OC,7.11
 CHEMBL3703776,Cc1cn(CCCn2c(=S)[nH]c3ccsc3c2=O)cn1,5.995
 CHEMBL3703764,Cc1cn(CCCn2c(=S)[nH]c3c(C)csc3c2=O)cn1,6.02
